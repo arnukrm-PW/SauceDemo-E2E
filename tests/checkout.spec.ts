@@ -62,7 +62,7 @@ test('TC_15 verify Finish on checkOut Overview page',{tag:'@smoke'},async({page}
     await checkoutPage.clickCheckoutContinue()
     expect(page).toHaveURL(/checkout-step-two/)
     await checkoutPage.clickCheckoutOverviewFinish()
-    expect(page).toHaveURL(/checkout-complete/)
+    await expect(page).toHaveURL(/checkout-complete/)
 })
 test('TC_16 verify checkout Complete page',{tag:'@smoke'},async({page})=>{
        await checkoutPage.verifyCheckoutPage()
