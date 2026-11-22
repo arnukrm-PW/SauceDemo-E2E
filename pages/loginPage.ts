@@ -25,7 +25,7 @@ export class LoginPage
         if(!this.baseURL){
             throw new Error("Base URL not set")
         }
-        await this.page.goto(this.baseURL)
+        await this.page.goto('/')
     }
     async login(username :string , password : string ){
             await this.usernameTextBox.fill(username)
