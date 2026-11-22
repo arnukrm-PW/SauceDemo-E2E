@@ -19,6 +19,15 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+    - name: Validate Base URL
+      run: |
+        if [ -z "$BASE_URL" ]; then
+          echo "ERROR: BASE_URL is empty"
+          exit 1
+        fi
+
+        echo "BASE_URL is configured"
+        echo "BASE_URL value: $BASE_URL"
     - name: Run Playwright tests
       run: npx playwright test
     - uses: actions/upload-artifact@v4
