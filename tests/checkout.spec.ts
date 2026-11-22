@@ -74,7 +74,7 @@ test('TC_16 verify checkout Complete page',{tag:'@smoke'},async({page})=>{
     await checkoutPage.verifyCheckOutComplete()
 
 } )
-test.only('TC_17 verify checkout Complete page ThankYou Message',{tag:'@smoke'},async({page})=>{
+test('TC_17 verify checkout Complete page ThankYou Message',{tag:'@smoke'},async({page})=>{
        await checkoutPage.verifyCheckoutPage()
     await checkoutPage.fillYourInformation(fillYourData.name,fillYourData.lastName,fillYourData.zipcode)
     await checkoutPage.clickCheckoutContinue()
