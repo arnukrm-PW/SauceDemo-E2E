@@ -21,10 +21,10 @@ export class LoginPage
     }
 
     async openURL(){
-        // console.log(this.baseURL)
-        if(!this.baseURL){
-            throw new Error("Base URL not set")
-        }
+        // // console.log(this.baseURL)
+        // if(!this.baseURL){
+        //     throw new Error("Base URL not set")
+        // }
         await this.page.goto('/')
     }
     async login(username :string , password : string ){
