@@ -9,7 +9,7 @@ import { defineConfig, devices } from '@playwright/test';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 import dotenv from 'dotenv'
 dotenv.config({path:'.env'})
-
+const baseURL = process.env.baseURL
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
