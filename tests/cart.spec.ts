@@ -28,7 +28,7 @@ const cartProducts = await cartPage.getCartProduct()
  expect(cartProducts).toEqual([text.SauceLabsBackPack,text.SauceLabsFleeceJacket])
 
 })
-test('TC_09 remove products and verify Badge Count from cart page',{tag:'@smoke'},async ({page})=>{
+test('TC_09 remove products and verify Badge Count from cart page',{tag:'@regression'},async ({page})=>{
     await cartPage.verifyPage()
     const beforeRemoveCount = await cartPage.getBadgeCount()
     console.log(`Before remove Badge Count = ${beforeRemoveCount}`)

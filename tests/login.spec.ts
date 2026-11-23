@@ -21,7 +21,7 @@ test("TC_01 - login to SD with Valid UserData",{tag:'@smoke'},async ({page})=>{
     // verify URL
     await expect(page).toHaveURL(URLs.inventoryURL)
 })
-test("TC_02 - login to SD with Locked UserData",{tag:'@smoke'},async ({page})=>{
+test("TC_02 - login to SD with Locked UserData",{tag:'@regression'},async ({page})=>{
    await loginPage.login(loginData.LockedUser.username,loginData.validUser.password)
 // Assert title
     await expect(page.locator('h3[data-test="error"]')).toContainText(text.errormsg)

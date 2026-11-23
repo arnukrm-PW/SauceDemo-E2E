@@ -31,7 +31,7 @@ test('TC_11 verify checkout page',{tag:'@smoke'},async ({page})=>{
     await page.waitForTimeout(5000)
 })
 
-test('TC_12 Fill data',{tag:'@smoke'},async ({page})=>{
+test('TC_12 Fill data',{tag:'@regression'},async ({page})=>{
 await checkoutPage.verifyCheckoutPage()
     await checkoutPage.fillYourInformation(fillYourData.name,fillYourData.lastName,fillYourData.zipcode)
 })
@@ -42,7 +42,7 @@ await checkoutPage.verifyCheckoutPage()
     await checkoutPage.clickCheckoutContinue()
     expect(page).toHaveURL(/checkout-step-two/)
 })
-test('TC_14 calculate  subtotal + tax gives Total',{tag:'@smoke'},async ({page})=>{
+test('TC_14 calculate  subtotal + tax gives Total',{tag:'@regression'},async ({page})=>{
 await checkoutPage.verifyCheckoutPage()
     await checkoutPage.fillYourInformation(fillYourData.name,fillYourData.lastName,fillYourData.zipcode)
     await checkoutPage.clickCheckoutContinue()
@@ -64,7 +64,7 @@ test('TC_15 verify Finish on checkOut Overview page',{tag:'@smoke'},async({page}
     await checkoutPage.clickCheckoutOverviewFinish()
     await expect(page).toHaveURL(/checkout-complete/)
 })
-test('TC_16 verify checkout Complete page',{tag:'@smoke'},async({page})=>{
+test('TC_16 verify checkout Complete page',{tag:'@regression'},async({page})=>{
        await checkoutPage.verifyCheckoutPage()
     await checkoutPage.fillYourInformation(fillYourData.name,fillYourData.lastName,fillYourData.zipcode)
     await checkoutPage.clickCheckoutContinue()

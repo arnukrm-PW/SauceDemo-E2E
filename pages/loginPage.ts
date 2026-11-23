@@ -12,7 +12,7 @@ export class LoginPage
 
     constructor(protected page:Page)
     {   
-        this.baseURL = process.env.baseURL
+        this.baseURL = process.env.BASE_URL
         this.usernameTextBox = page.getByPlaceholder('Username')
         this.passwordTextBox = page.getByPlaceholder('Password')
         this.LoginButton = page.locator('input[data-test="login-button"]')

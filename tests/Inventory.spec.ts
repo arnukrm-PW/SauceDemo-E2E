@@ -9,8 +9,8 @@ let inventoryPage : InventoryPage
 test.beforeEach(async({page})=>{
 loginPage = new LoginPage(page)
  inventoryPage =  new InventoryPage(page)
-loginPage.openURL()
-loginPage.login(loginData.validUser.username,loginData.validUser.password)
+await loginPage.openURL()
+await loginPage.login(loginData.validUser.username,loginData.validUser.password)
 })
 
 test('TC_03 Inventory add to cart products',{tag:'@smoke'},async ({page})=>{
@@ -23,7 +23,7 @@ console.log(count)
 await expect(page.locator('[data-test="shopping-cart-badge"]')).toHaveText('2')
 
 })
-test('TC_04 Inventory add to cart products - SORTING - AZ',{tag:'@smoke'},async ({page})=>{
+test('TC_04 Inventory add to cart products - SORTING - AZ',{tag:'@regression'},async ({page})=>{
 
 await inventoryPage.getAssSorted(sortOptions.nameAsc)
 await page.waitForTimeout(5000)
@@ -35,7 +35,7 @@ await inventoryPage.getAssSorted(sortOptions.nameDesc)
 await page.waitForTimeout(5000)
 
 })
-test('TC_06 Inventory add to cart products - SORTING - hilow',{tag:'@smoke'},async ({page})=>{
+test('TC_06 Inventory add to cart products - SORTING - hilow',{tag:'@regression'},async ({page})=>{
   
 const beforeSort : string[] = await inventoryPage.getAllProductPrice()
 await inventoryPage.getAssSorted(sortOptions.hilow)
